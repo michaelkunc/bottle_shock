@@ -11,7 +11,7 @@ CSV.foreach('../brands.csv') do |row|
   urls << row[1]
 end
 
-urls[201..300].each do |url|
+urls[3401..3500].each do |url|
   doc = Nokogiri::HTML(open(url))
   name = doc.css('h1').text
   item_number = doc.css('div.productInfo > h3').text.gsub("Item #", '').to_i
